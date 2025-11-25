@@ -1,49 +1,50 @@
-[![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Ricepaste/AI-content-detector/blob/master/LICENSE)
-# Introduction
 
-<!-- 可以讓你作為依據降低文章的AI感或者增加人類感，並且避免被conference reject -->
+# AI-content-detector
 
-各位有用AI生論文被抓到的經驗嗎? 
-不用害怕、不用擔心! 我們目前開發出了一個使用壓縮gpt-2為底的AI論文辨識器!
-💡 特別適合：
+A fast, local tool for detecting AI-generated English text using GPT-2 perplexity analysis. Ideal for academic submissions, originality checks, and avoiding conference rejections.
 
-投各種Conference、期刊以及任何需要做原創性審查的work
-用gpt_zero、copyleak用不到三次免費額度就用光了嗎? 沒問題! 使用我們的模型可以問到爽
-還在乖乖等待3、5分鐘等AI內容檢測嗎? 太慢了! 使用我們的模型包你3秒鐘看出結果!
+## Features
+- Calculates average perplexity (PPL) and token loss variance for input text
+- Provides a simple GUI for easy use
+- Gives clear predictions: likely AI-generated, human-written, or mixed
+- Runs locally—no usage limits or long waits
+- Supports GPT-2, GPT-2 Medium, and GPT-2 Large
 
-我們堅信：
+## Installation
 
-🧠 「人類的原創性值得被尊重」
+1. Clone the repository:
+	```bash
+	git clone https://github.com/<your-username>/AI-content-detector.git
+	cd AI-content-detector
+	```
+2. Install dependencies:
+	```bash
+	pip install -r requirements.txt
+	```
 
-💻 「AI應該輔助，而不是偽裝」
+## Usage
 
-P.S. 我們對於此模型的運行結果概不負責，此計算結果為AI生成!
-
-# Installation
-
+Run the detector with:
 ```bash
-pip install -r requirements.txt
+python AI_detector.py
 ```
 
-# Usage
+- Enter your English text in the GUI and click "計算困惑度" (Calculate Perplexity).
+- The tool will display average perplexity, token loss variance, and a prediction about the text's origin.
 
-```bash
-python AI_dectector.py
-```
-<!-- 放使用過程照片 -->
-![使用截圖](https://github.com/Ricepaste/AI-content-detector/blob/master/readme_files/image.png?raw=true#gh-dark-mode-only)
-![使用截圖](https://github.com/Ricepaste/AI-content-detector/blob/master/readme_files/image.png?raw=true#gh-light-mode-only)
+## How It Works
+- Uses GPT-2 to compute perplexity and token-level loss variance.
+- Lower perplexity and variance often indicate AI-generated text; higher values suggest human writing.
+- Thresholds are empirical and may be adjusted for different use cases.
 
+## Example
+![Screenshot](readme_files/image.png)
 
+## Contributing
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. Use Conventional Commits for commit messages.
 
-# Author
+## License
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-If you have any questions or feedback, please reach out to:
-
-- **Name:** Chia-Jung, Kuo
-- **Email:** n22126@gmail.com
-- **GitHub:** [Ricepaste](https://github.com/Ricepaste)
----
-- **Name:** Ming-Yu, Shieh
-- **Email:** parisdata@gmail.com
-- **GitHub:** [BangDonKiller](https://github.com/BangDonKiller)
+> [!IMPORTANT] 
+> *Disclaimer: Results are for reference only. The tool does not guarantee detection accuracy.*
